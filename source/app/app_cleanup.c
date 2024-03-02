@@ -7,6 +7,7 @@ void onCleanup()
         free(tiles);
         tiles = NULL;
     }
+    SDL_DestroyTexture(number);
 
     TTF_CloseFont(font);
     SDL_DestroyRenderer(renderer);

@@ -16,11 +16,12 @@ int createNumberTexture(int value)
     }
 
     // create texture from surface
+    SDL_DestroyTexture(number);
     number = SDL_CreateTextureFromSurface(renderer, text_surface);
     number_width = text_surface->w;
     number_height = text_surface->h;
-    free(text_surface);
 
+    free(text_surface);
     return number == NULL;
 }
 
