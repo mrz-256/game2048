@@ -3,6 +3,12 @@
 
 void onLoop()
 {
+    if (check_if_lost())
+    {
+        if (input == RESET) reset();
+        return;
+    }
+
     switch (input)
     {
         case SLIDE_LEFT: slide_left();

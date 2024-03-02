@@ -140,3 +140,12 @@ void add_random()
 
     tiles[y*TILES + x] = 1 +  rand() % 2;
 }
+
+int check_if_lost()
+{
+    for(int i=0; i<TILES*TILES; i++)
+    {
+        if (tiles[i]==0) return 0;
+    }
+    return 1;
+}

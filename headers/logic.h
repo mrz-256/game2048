@@ -18,3 +18,9 @@ void reset();
 
 /// adds random value to a random tile
 void add_random();
+
+/**
+ * Checks if player filled all tiles
+ * @return 0 if there still are empty tiles
+ */
+int check_if_lost();
