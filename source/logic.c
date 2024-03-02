@@ -1,5 +1,6 @@
 #include "../headers/logic.h"
 
+
 void slide_left()
 {
     // 0 1 0 1 0 0 0 0
@@ -24,6 +25,7 @@ void slide_left()
             if (left >= 0 && tiles[y * TILES + left] == value)
             {
                 tiles[y * TILES + left] *= 2;
+                if (!ALLOW_MAX_SLIDE) left++;
                 if (value * 2 > score) score = value * 2;
             } else
             {
@@ -51,6 +53,7 @@ void slide_right()
             if (right < TILES && tiles[y * TILES + right] == value)
             {
                 tiles[y * TILES + right] *= 2;
+                if (!ALLOW_MAX_SLIDE) right--;
                 if (value * 2 > score) score = value * 2;
             } else
             {
@@ -78,6 +81,7 @@ void slide_up()
             if (up >= 0 && tiles[up * TILES + x] == value)
             {
                 tiles[up * TILES + x] *= 2;
+                if (!ALLOW_MAX_SLIDE) up++;
                 if (value * 2 > score) score = value * 2;
             } else
             {
@@ -105,6 +109,7 @@ void slide_down()
             if (down < TILES && tiles[down * TILES + x] == value)
             {
                 tiles[down * TILES + x] *= 2;
+                if (!ALLOW_MAX_SLIDE) down--;
                 if (value * 2 > score) score = value * 2;
             } else
             {
