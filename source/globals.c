@@ -17,4 +17,5 @@ int number_width;
 int number_height;
 
 int score = 0;
+int count = 0;
 int slide_direction = DIRECTION_NONE;

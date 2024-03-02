@@ -30,6 +30,7 @@ extern int number_height;
 
 /// the total sum of all joined tiles
 extern int score;
+extern int count;
 
 /// The direction of current slide
 extern int slide_direction;

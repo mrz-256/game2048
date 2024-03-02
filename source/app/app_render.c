@@ -62,13 +62,19 @@ void renderTile(int x, int y)
 
 void onRender()
 {
+    // clear display
     SDL_SetRenderDrawColor(renderer, 0x1f, 0x1f, 0x1f, 0xff);
     SDL_RenderClear(renderer);
 
+    // write score
     createNumberTexture(score);
     renderNumberTextureAt(TILE_SIZE / 2 - number_width / 2, TILE_SIZE / 2 - number_height / 2);
 
+    // write steps count
+    createNumberTexture(count);
+    renderNumberTextureAt(TILES*TILE_SIZE - TILE_SIZE / 2 - number_width / 2, TILE_SIZE / 2 - number_height / 2);
 
+    // print the tiles
     for (int y = 0; y < TILES; y++)
     {
         for (int x = 0; x < TILES; x++)
@@ -87,5 +93,6 @@ void onRender()
         }
     }
 
+    // render everything
     SDL_RenderPresent(renderer);
 }
