@@ -2,9 +2,11 @@
 
 int onInit()
 {
+    // initialize SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) return -1;
     if (TTF_Init() < 0) return -2;
 
+    // create window
     window = SDL_CreateWindow(
             TITLE,
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -15,16 +17,13 @@ int onInit()
 
     if (window != NULL)
     {
+        // create renderer
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
         if (renderer != NULL)
         {
+            // create tiles
             tiles = calloc(TILES*TILES, sizeof(int));
-            tiles[0] = 8;
-            tiles[1] = 1;// todo: remove test values
-            tiles[3] = 1;//...
-            tiles[5] = 2;//...
-            tiles[7] = 4;//...
-            tiles[12] = 8;//...
+            add_random();
             return 0;
         }
         else

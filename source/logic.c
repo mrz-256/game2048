@@ -113,3 +113,25 @@ void slide_down()
         }
     }
 }
+
+void reset()
+{
+    for (int i = 0; i < TILES * TILES; i++)
+    {
+        tiles[i] = 0;
+    }
+    score = 0;
+    count = 0;
+}
+
+void add_random()
+{
+    int x, y;
+    do
+    {
+        x = rand() % TILES;
+        y = rand() % TILES;
+    } while (tiles[y * TILES + x] != 0);
+
+    tiles[y*TILES + x] = 1 +  rand() % 2;
+}

@@ -3,12 +3,28 @@
 
 void onLoop()
 {
-    count++;
-    if (slide_direction == DIRECTION_LEFT) slide_left();
-    else if (slide_direction == DIRECTION_RIGHT) slide_right();
-    else if (slide_direction == DIRECTION_UP) slide_up();
-    else if (slide_direction == DIRECTION_DOWN) slide_down();
-    else count--;
+    switch (input)
+    {
+        case SLIDE_LEFT: slide_left();
+            break;
+        case SLIDE_RIGHT: slide_right();
+            break;
+        case SLIDE_UP: slide_up();
+            break;
+        case SLIDE_DOWN: slide_down();
+            break;
+        case RESET: reset();
+            break;
+        default:
+            break; // nothing
+    }
 
-    slide_direction = DIRECTION_NONE;
+    if (input != NONE)
+    {
+        input = NONE;
+        count++;
+        add_random();
+    }
+
+
 }

@@ -32,8 +32,8 @@ extern int number_height;
 extern int score;
 extern int count;
 
-/// The direction of current slide
-extern int slide_direction;
-enum SlideDirection{
-    DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP, DIRECTION_DOWN, DIRECTION_NONE
+/// The current action
+extern int input;
+enum InputType{
+    NONE, SLIDE_LEFT, SLIDE_RIGHT, SLIDE_UP, SLIDE_DOWN, RESET
 };
