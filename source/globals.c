@@ -12,7 +12,8 @@ int running = 1;
 int* tiles;
 
 SDL_Texture *number;
-SDL_Color text_color = {0xdf, 0xdf, 0xdf, 0xff};
+SDL_Color white_color = {0xdf, 0xdf, 0xdf, 0xff};
+SDL_Color black_color = {0x0, 0x0, 0x0, 0xff};
 int number_width;
 int number_height;
 

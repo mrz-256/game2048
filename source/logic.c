@@ -24,7 +24,7 @@ void slide_left()
             if (left >= 0 && tiles[y * TILES + left] == value)
             {
                 tiles[y * TILES + left] *= 2;
-                score += value * 2;
+                if (value * 2 > score) score = value * 2;
             } else
             {
                 tiles[y * TILES + ++left] = value;
@@ -51,7 +51,7 @@ void slide_right()
             if (right < TILES && tiles[y * TILES + right] == value)
             {
                 tiles[y * TILES + right] *= 2;
-                score += value * 2;
+                if (value * 2 > score) score = value * 2;
             } else
             {
                 tiles[y * TILES + --right] = value;
@@ -78,7 +78,7 @@ void slide_up()
             if (up >= 0 && tiles[up * TILES + x] == value)
             {
                 tiles[up * TILES + x] *= 2;
-                score += value * 2;
+                if (value * 2 > score) score = value * 2;
             } else
             {
                 tiles[++up * TILES + x] = value;
@@ -105,7 +105,7 @@ void slide_down()
             if (down < TILES && tiles[down * TILES + x] == value)
             {
                 tiles[down * TILES + x] *= 2;
-                score += value * 2;
+                if (value * 2 > score) score = value * 2;
             } else
             {
                 tiles[--down * TILES + x] = value;

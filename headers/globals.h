@@ -24,7 +24,8 @@ extern int* tiles;
 /// the texture used for rendering any numbers
 extern SDL_Texture *number;
 /// the color of the number texture
-extern SDL_Color text_color;
+extern SDL_Color white_color;
+extern SDL_Color black_color;
 extern int number_width;
 extern int number_height;
 

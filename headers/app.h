@@ -47,7 +47,7 @@ void onCleanup();
  * @param value the number to create the texture with
  * @return 0 on success
  */
-int createNumberTexture(int value);
+int createNumberTexture(int value, SDL_Color color);
 
 /**
  * Renders the `number` global SDL_Texture at position [x,y]
